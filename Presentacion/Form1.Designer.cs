@@ -35,7 +35,7 @@
             btnAgregar = new Button();
             txtProducto = new TextBox();
             lblBuscar = new Label();
-            tableLayoutPanel1 = new TableLayoutPanel();
+            tblProductos = new TableLayoutPanel();
             PanelTotal = new Panel();
             panel1 = new Panel();
             cbCliente = new ComboBox();
@@ -48,8 +48,10 @@
             dtpFechaEntrega = new DateTimePicker();
             label4 = new Label();
             label3 = new Label();
+            lblTotal = new Label();
             PanelTienda.SuspendLayout();
             PanelTabla.SuspendLayout();
+            PanelTotal.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -86,7 +88,7 @@
             PanelTabla.Controls.Add(btnAgregar);
             PanelTabla.Controls.Add(txtProducto);
             PanelTabla.Controls.Add(lblBuscar);
-            PanelTabla.Controls.Add(tableLayoutPanel1);
+            PanelTabla.Controls.Add(tblProductos);
             PanelTabla.Location = new Point(16, 111);
             PanelTabla.Name = "PanelTabla";
             PanelTabla.Size = new Size(597, 214);
@@ -120,25 +122,23 @@
             lblBuscar.TabIndex = 1;
             lblBuscar.Text = "Buscar:";
             // 
-            // tableLayoutPanel1
+            // tblProductos
             // 
-            tableLayoutPanel1.ColumnCount = 5;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 46F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 54F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 116F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 115F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 126F));
-            tableLayoutPanel1.Location = new Point(3, 31);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 90F));
-            tableLayoutPanel1.Size = new Size(584, 180);
-            tableLayoutPanel1.TabIndex = 0;
-            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
+            tblProductos.ColumnCount = 2;
+            tblProductos.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tblProductos.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tblProductos.Location = new Point(3, 31);
+            tblProductos.Name = "tblProductos";
+            tblProductos.RowCount = 2;
+            tblProductos.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tblProductos.RowStyles.Add(new RowStyle(SizeType.Percent, 90F));
+            tblProductos.Size = new Size(584, 180);
+            tblProductos.TabIndex = 0;
+            tblProductos.Paint += tableLayoutPanel1_Paint;
             // 
             // PanelTotal
             // 
+            PanelTotal.Controls.Add(lblTotal);
             PanelTotal.Location = new Point(16, 331);
             PanelTotal.Name = "PanelTotal";
             PanelTotal.Size = new Size(597, 107);
@@ -241,6 +241,15 @@
             label3.TabIndex = 0;
             label3.Text = "Fecha de Entrega";
             // 
+            // lblTotal
+            // 
+            lblTotal.AutoSize = true;
+            lblTotal.Location = new Point(428, 10);
+            lblTotal.Name = "lblTotal";
+            lblTotal.Size = new Size(35, 15);
+            lblTotal.TabIndex = 0;
+            lblTotal.Text = "Total:";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -258,6 +267,8 @@
             PanelTienda.PerformLayout();
             PanelTabla.ResumeLayout(false);
             PanelTabla.PerformLayout();
+            PanelTotal.ResumeLayout(false);
+            PanelTotal.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -274,7 +285,7 @@
         private Panel PanelTabla;
         private Panel PanelTotal;
         private ComboBox cbEmpleados;
-        private TableLayoutPanel tableLayoutPanel1;
+        private TableLayoutPanel tblProductos;
         private TextBox txtProducto;
         private Label lblBuscar;
         private Panel panel1;
@@ -289,5 +300,6 @@
         private Label label4;
         private Label label3;
         private Button btnAgregar;
+        private Label lblTotal;
     }
 }
